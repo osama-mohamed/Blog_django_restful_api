@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% include 'includes/css.html' %}
+        <title>{% block title %}OSAMA MOHAMED Blog{% endblock %}</title>
+    </head>
+    <body>
+        <div class="container">
+            {% include 'includes/nav_bar.html' %}
+            {% include 'includes/messages.html' %}
+            {% block body %}
+            {% endblock %}
+        </div>
+        {% include 'includes/js.html' %}
+    </body>
+</html>

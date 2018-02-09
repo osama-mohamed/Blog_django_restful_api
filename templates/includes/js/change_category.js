@@ -1,0 +1,1 @@
+this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);

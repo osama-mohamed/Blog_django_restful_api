@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    {{ object.user }}'s comment Delete
+{% endblock %}
+
+{% block body %}
+    <div class="col-sm-6 col-sm-offset-3">
+        <form method="POST" action="" class="form-group">
+            {% csrf_token %}
+            <h1>Confirm Delete</h1>
+            <p>Are you sure you want to delete {{ object.content }} ? </p>
+            <input type="submit" value="Confirm delete" class="btn btn-danger">
+            <a href="{{ object.get_absolute_url }}" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

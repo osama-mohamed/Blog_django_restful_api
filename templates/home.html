@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Welcome To My Django Website ^_^</h1>
+    <p class="lead">
+        This application was built with the Python Django Framework
+        & bootstrap and is the focus for the power of "Python Django" framework
+        <br>
+        By : OSAMA MOHAMED ,
+        <br>
+        python developer
+    </p>
+    {% if session.logged_in == NULL %}
+        <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg">Register</a>
+        &emsp;
+        <a href="{% url 'accounts:login' %}" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
