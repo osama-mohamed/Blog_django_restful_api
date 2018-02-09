@@ -1,20 +1,14 @@
 from rest_framework.serializers import (
     ModelSerializer,
-    CharField,
-    EmailField,
-    ValidationError,
     SerializerMethodField,
     HyperlinkedIdentityField,
-    )
-
-from django.contrib.auth import get_user_model
-from django.db.models import Q
+)
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
 from article.models import Article
-
-User = get_user_model()
+from comment.models import Comment
+from comment.api.serializers import CommentSerializer
 
 
 class AllArticlesSerializer(ModelSerializer):
@@ -54,12 +48,19 @@ class AllArticlesSerializer(ModelSerializer):
 class ArticleDetailSerializer(ModelSerializer):
     category = SerializerMethodField(read_only=True)
     all_products_url = SerializerMethodField()
+    add_comment_url = HyperlinkedIdentityField(
+        view_name='comments_api:add_api',
+        lookup_field='id'
+    )
+    count_comments = SerializerMethodField()
+    comments = SerializerMethodField()
 
     class Meta:
         model = Article
         fields = [
             'id',
             'all_products_url',
+            'add_comment_url',
             'category',
             'title',
             'body',
@@ -71,6 +72,8 @@ class ArticleDetailSerializer(ModelSerializer):
             'block_comment',
             'added',
             'updated',
+            'count_comments',
+            'comments',
         ]
 
     def get_category(self, obj):
@@ -78,3 +81,14 @@ class ArticleDetailSerializer(ModelSerializer):
 
     def get_all_products_url(self, obj):
         return settings.BASE_URL + reverse('articles_api:list_api')
+
+    def get_comments(self, obj):
+        comments_qs = Comment.objects.filter_by_queryset(obj)
+        comments = CommentSerializer(comments_qs, many=True).data
+        return comments
+
+    def get_count_comments(self, obj):
+        comments_qs = Comment.objects.filter_by_queryset(obj)
+        comments = len(comments_qs)
+        return comments
+

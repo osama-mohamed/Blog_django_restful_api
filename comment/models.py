@@ -36,7 +36,7 @@ class Comment(models.Model):
         ordering = ['-added']
 
     def __str__(self):
-        return str(self.user.username)
+        return str(self.content)
 
     def get_absolute_url(self):
         return reverse('comments:thread', kwargs={'id': self.id})

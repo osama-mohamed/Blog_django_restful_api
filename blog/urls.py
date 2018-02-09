@@ -16,6 +16,7 @@ urlpatterns = [
 
     url(r'^api/accounts/', include('account.api.urls', namespace='accounts_api')),
     url(r'^api/articles/', include('article.api.urls', namespace='articles_api')),
+    url(r'^api/comments/', include('comment.api.urls', namespace='comments_api')),
 
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
