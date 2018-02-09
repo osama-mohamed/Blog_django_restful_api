@@ -104,3 +104,6 @@ SHORTCODE_MIN = 50
 
 LOGIN_REDIRECT_URL = '/articles/'
 LOGOUT_REDIRECT_URL = '/articles/'
+
+
+BASE_URL = 'http://localhost:8000'  # used in article detail in api
