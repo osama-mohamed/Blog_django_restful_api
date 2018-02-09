@@ -11,6 +11,11 @@ urlpatterns = [
     url(r'^accounts/', include('account.urls', namespace='accounts')),
     url(r'^comments/', include('comment.urls', namespace='comments')),
     url(r'^about_me/$', TemplateView.as_view(template_name='about_me.html'), name='about_me'),
+
+
+
+    url(r'^api/accounts/', include('account.api.urls', namespace='accounts_api')),
+
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
 
