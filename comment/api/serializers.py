@@ -12,6 +12,7 @@ from comment.models import Comment
 class ArticleCommentSerializer(ModelSerializer):
     content = CharField(label='Comment')
     thread_url = SerializerMethodField()
+    delete_url = SerializerMethodField()
     replies_count = SerializerMethodField()
     replies = SerializerMethodField()
 
@@ -20,12 +21,16 @@ class ArticleCommentSerializer(ModelSerializer):
         fields = [
             'content',
             'thread_url',
+            'delete_url',
             'replies_count',
             'replies',
         ]
 
     def get_thread_url(self, obj):
         return str(settings.BASE_URL + reverse('comments_api:thread_api', kwargs={'id': obj.id}))
+
+    def get_delete_url(self, obj):
+        return str(settings.BASE_URL + reverse('comments_api:delete_api', kwargs={'id': obj.id}))
 
     def get_replies_count(self, obj):
         if obj.is_parent:
@@ -53,11 +58,13 @@ class CommentThreadSerializer(ModelSerializer):
     content = CharField(label='Comment')
     replies_count = SerializerMethodField()
     replies = SerializerMethodField()
+    delete_url = SerializerMethodField()
 
     class Meta:
         model = Comment
         fields = [
             'content',
+            'delete_url',
             'replies_count',
             'replies',
         ]
@@ -71,6 +78,9 @@ class CommentThreadSerializer(ModelSerializer):
         if obj.is_parent:
             return CommentThreadSerializer(obj.children(), many=True).data
         return None
+
+    def get_delete_url(self, obj):
+        return str(settings.BASE_URL + reverse('comments_api:delete_api', kwargs={'id': obj.id}))
 
 
 class CommentThreadReplySerializer(ModelSerializer):

@@ -31,12 +31,13 @@
         <option value="$PROJECT_DIR$/article/api/pagination.py" />
         <option value="$PROJECT_DIR$/blog/urls.py" />
         <option value="$PROJECT_DIR$/comment/models.py" />
-        <option value="$PROJECT_DIR$/comment/api/urls.py" />
         <option value="$PROJECT_DIR$/article/models.py" />
         <option value="$PROJECT_DIR$/article/api/views.py" />
-        <option value="$PROJECT_DIR$/comment/api/serializers.py" />
-        <option value="$PROJECT_DIR$/comment/api/views.py" />
         <option value="$PROJECT_DIR$/article/api/serializers.py" />
+        <option value="$PROJECT_DIR$/comment/api/urls.py" />
+        <option value="$PROJECT_DIR$/comment/api/permissions.py" />
+        <option value="$PROJECT_DIR$/comment/api/views.py" />
+        <option value="$PROJECT_DIR$/comment/api/serializers.py" />
       </list>
     </option>
   </component>
@@ -73,17 +74,6 @@
             <path>
               <item name="Blog_django" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog_django" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog_django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog_django" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog_django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog_django" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,30 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comment/api/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comment/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/article/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="603">
@@ -386,10 +352,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/comment/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="82" lean-forward="false" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/api/permissions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/comment/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="-255">
+          <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
           <folding>
             <element signature="e#0#105#0" expanded="true" />
           </folding>

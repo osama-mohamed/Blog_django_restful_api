@@ -1,5 +1,6 @@
 from rest_framework.generics import (
     RetrieveAPIView,
+    DestroyAPIView,
 )
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
@@ -13,7 +14,7 @@ from .serializers import (
     CommentThreadSerializer,
     CommentThreadReplySerializer,
 )
-from .pagination import ArticlePageNumberPagination
+from .permissions import IsOwnerOrReadOnly
 from article.models import Article
 from comment.models import Comment
 
@@ -109,3 +110,12 @@ class CommentThreadAPIView(RetrieveAPIView):
                 status=HTTP_400_BAD_REQUEST
             )
 
+
+class CommentDeleteAPIView(DestroyAPIView):
+    serializer_class = CommentThreadSerializer
+    lookup_field = 'id'
+    permission_classes = [IsOwnerOrReadOnly, IsAuthenticated]
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = Comment.objects.filter(id=self.kwargs['id'])
+        return queryset
