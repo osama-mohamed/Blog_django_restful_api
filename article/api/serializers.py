@@ -8,7 +8,7 @@ from django.conf import settings
 
 from article.models import Article
 from comment.models import Comment
-from comment.api.serializers import CommentSerializer
+from comment.api.serializers import ArticleCommentSerializer
 
 
 class AllArticlesSerializer(ModelSerializer):
@@ -60,7 +60,6 @@ class ArticleDetailSerializer(ModelSerializer):
         fields = [
             'id',
             'all_products_url',
-            'add_comment_url',
             'category',
             'title',
             'body',
@@ -72,6 +71,7 @@ class ArticleDetailSerializer(ModelSerializer):
             'block_comment',
             'added',
             'updated',
+            'add_comment_url',
             'count_comments',
             'comments',
         ]
@@ -84,7 +84,7 @@ class ArticleDetailSerializer(ModelSerializer):
 
     def get_comments(self, obj):
         comments_qs = Comment.objects.filter_by_queryset(obj)
-        comments = CommentSerializer(comments_qs, many=True).data
+        comments = ArticleCommentSerializer(comments_qs, many=True).data
         return comments
 
     def get_count_comments(self, obj):
