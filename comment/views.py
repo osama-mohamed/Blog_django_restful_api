@@ -1,6 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView
-from django.contrib import messages
+from django.shortcuts import get_object_or_404
+from django.views.generic import DetailView
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
 

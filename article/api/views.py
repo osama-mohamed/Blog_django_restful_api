@@ -2,12 +2,7 @@ from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
 )
-from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
-from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
-from django.contrib.auth import get_user_model
-from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
 
 from .serializers import (
@@ -16,10 +11,6 @@ from .serializers import (
 )
 from .pagination import ArticlePageNumberPagination
 from article.models import Article
-from comment.models import Comment
-from comment.api.serializers import CommentThreadReplySerializer
-
-User = get_user_model()
 
 
 class AllArticlesAPIView(ListAPIView):

@@ -106,4 +106,4 @@ LOGIN_REDIRECT_URL = '/articles/'
 LOGOUT_REDIRECT_URL = '/articles/'
 
 
-BASE_URL = 'http://localhost:8000'  # used in article detail in api
+BASE_URL = 'http://localhost:8000'  # used in article detail in api & comment thread, comment delete

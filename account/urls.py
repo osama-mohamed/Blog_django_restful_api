@@ -1,9 +1,7 @@
 from django.conf.urls import url
 from django.contrib.auth.views import LoginView, LogoutView
 
-from .views import (
-    RegisterView,
-)
+from .views import RegisterView
 
 
 urlpatterns = [

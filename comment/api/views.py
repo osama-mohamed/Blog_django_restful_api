@@ -8,7 +8,6 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.contenttypes.models import ContentType
 
-
 from .serializers import (
     CommentSerializer,
     CommentThreadSerializer,

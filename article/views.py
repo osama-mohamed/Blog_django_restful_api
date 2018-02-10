@@ -1,10 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView, View
+from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib.contenttypes.models import ContentType
-from django.http import HttpResponseRedirect
 from django.db.models import Q
-
 
 from .models import Article, Category
 from comment.models import Comment
@@ -103,12 +101,10 @@ class ArticleDetailView(DetailView):
                 parent=parent_obj
             )
             return redirect('articles:detail', slug=article.slug)
-            # return HttpResponseRedirect(new_comment.content_object.get_absolute_url())
 
 
 class ArticlesByCategoryListView(ListView):
     template_name = 'article/all_articles.html'
-    # queryset = ''
     paginate_by = 20
 
     def get_queryset(self):
@@ -131,6 +127,5 @@ class ArticlesByCategoryListView(ListView):
         context['objects'] = queryset
         context['page_request'] = page_request
 
-        # context['object_list'] = Article.objects.filter(category__category=self.kwargs['category']).order_by('-id')
         context['categories'] = Category.objects.all()
         return context
