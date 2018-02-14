@@ -1,7 +1,7 @@
 # [Blog Restful API](https://blog-osama-mohamed-django.herokuapp.com) By Django
 
-[<img src="https://www.djangoproject.com/s/img/logos/django-logo-negative.png" width="200" title="Django Projects" >](https://github.com/OSAMAMOHAMED1234/django_projects)
-[<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="150" title="Django Projects" >](https://github.com/OSAMAMOHAMED1234/django_projects)
+[<img src="https://www.djangoproject.com/s/img/logos/django-logo-negative.png" width="200" title="Blog Restful API" >](https://blog-osama-mohamed-django.herokuapp.com)
+[<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="150" title="Blog Restful API" >](https://blog-osama-mohamed-django.herokuapp.com)
 
 
 ## For live preview :
