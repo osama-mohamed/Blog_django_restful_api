@@ -8,7 +8,7 @@
 > [Blog Restful API](https://blog-osama-mohamed-django.herokuapp.com)
 
 
-## Blog website containes:
+## Blog website contains:
 ### 3 Apps :
     1. Account
     2. Article
